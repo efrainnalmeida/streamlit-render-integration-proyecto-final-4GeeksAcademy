@@ -7,15 +7,14 @@ import os
 app = Flask(__name__)
 
 # Cargar modelo y objetos necesarios
-MODEL_DIR = r"C:/Users/Efrain Almeida/Documents/4Geeks Academy/02 Proyectos/efrainnalmeida-flask-render-integration/models"
 
-with open(os.path.join(MODEL_DIR, "xgb_model.pkl"), "rb") as f:
+with open(os.path.join("xgb_model.pkl"), "rb") as f:
     model = pickle.load(f)
 
-with open(os.path.join(MODEL_DIR, "label_encoders.pkl"), "rb") as f:
+with open(os.path.join("label_encoders.pkl"), "rb") as f:
     label_encoders = pickle.load(f)
 
-with open(os.path.join(MODEL_DIR, "feature_order.pkl"), "rb") as f:
+with open(os.path.join("feature_order.pkl"), "rb") as f:
     feature_order = pickle.load(f)
 
 @app.route("/", methods=["GET", "POST"])
